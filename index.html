@@ -1,153 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>점검 중 | Under Maintenance</title>
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="description" content="현재 서비스 점검 중입니다. 불편을 드려 죄송합니다." />
-  <meta property="og:title" content="점검 중 | Under Maintenance" />
-  <meta property="og:description" content="현재 서비스 점검 중입니다." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ko_KR" />
-  <meta http-equiv="refresh" content="60"> <!-- 60초마다 자동 새로고침 -->
+  <meta charset="UTF-8">
+  <title>대규모 업데이트 안내</title>
   <style>
-    :root {
-      --bg: #050811;
-      --card: #0d1224;
-      --text: #ffffff;
-      --sub: #d0d5ff;
-      --accent: #7aa2ff;
-      --btn: #3b5bdb;
-      --btn-hover: #324ac7;
-      --border: #1c2754;
-    }
-    * { box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Apple SD Gothic Neo, "Malgun Gothic", "맑은 고딕", sans-serif;
-      background: radial-gradient(1200px 800px at 70% -20%, #0f1640 0%, var(--bg) 60%);
-      color: var(--text);
-    }
-    .wrap {
-      min-height: 100%;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-    .card {
-      width: 100%;
-      max-width: 680px;
-      background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(6px);
-    }
-    .title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: clamp(20px, 2.6vw, 28px);
-      margin: 0 0 6px;
-    }
-    .title .dot {
-      width: 12px; height: 12px; border-radius: 50%;
-      background: #ffb703; box-shadow: 0 0 12px #ffb703;
-      animation: pulse 1.5s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 0.9; }
-      50% { transform: scale(1.25); opacity: 0.6; }
-    }
-    .desc { color: var(--sub); margin: 0 0 18px; line-height: 1.6; }
-    .box {
-      background: rgba(122, 162, 255, 0.1);
-      border: 1px dashed var(--border);
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin: 18px 0;
-      color: #e6eaff;
-    }
-    .row { display: grid; grid-template-columns: 120px 1fr; gap: 10px 14px; }
-    .row div:first-child { color: var(--sub); }
-    .actions {
-      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;
-    }
-    button, a.btn {
-      appearance: none; border: 0; outline: 0; cursor: pointer;
-      background: var(--btn); color: #fff; padding: 10px 14px;
-      border-radius: 10px; font-weight: 600; text-decoration: none;
-      transition: transform .05s ease, background .2s ease;
-    }
-    button:active, a.btn:active { transform: translateY(1px); }
-    button:hover, a.btn:hover { background: var(--btn-hover); }
-    .muted { color: var(--sub); font-size: 13px; margin-top: 10px; }
-    footer { margin-top: 20px; font-size: 12px; color: #bfcaff; opacity: .9; }
-    .lang { font-size: 13px; color: #bfcaff; }
-    .divider { height: 1px; background: var(--border); margin: 18px 0; }
-    @media (max-width: 480px) {
-      .row { grid-template-columns: 1fr; }
-    }
+    body { font-family: sans-serif; text-align: center; background: #f5f7fa; color: #333; padding: 60px; }
+    .box { background: white; display: inline-block; padding: 40px 60px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #0056ff; margin-bottom: 10px; }
+    p { line-height: 1.6; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <main class="card" role="main" aria-labelledby="maint-title">
-      <h1 id="maint-title" class="title"><span class="dot"></span> 서비스 점검 중입니다</h1>
-      <p class="desc">
-        더 나은 서비스를 위해 시스템 점검을 진행하고 있습니다. 잠시 후 다시 접속해 주세요.
-        불편을 드려 죄송합니다.
-      </p>
-
-      <section class="box">
-        <h2 style="margin:0 0 10px; font-size:16px; color:#e6eaff;">점검 정보</h2>
-        <div class="row">
-          <div>상태</div><div>진행 중 (Under maintenance)</div>
-        </div>
-        <p class="muted">※ 페이지는 60초마다 자동으로 새로고침됩니다.</p>
-      </section>
-
-      <div class="actions">
-        <button id="retryBtn" type="button">다시 시도</button>
-        <a class="btn" href="mailto:support@example.com">문의 메일 보내기</a>
-        <a class="btn" href="/" rel="home">홈으로</a>
-      </div>
-
-      <div class="divider"></div>
-
-      <p class="lang">
-        <strong>English:</strong> We are currently performing maintenance. Please try again shortly. Thank you for your patience.
-      </p>
-
-      <footer>
-        © <span id="year"></span> Your Company. All rights reserved.
-      </footer>
-    </main>
+  <div class="box">
+    <h1>🚀 대규모 업데이트 준비 중</h1>
+    <p>더 나은 서비스 품질과 안정성을 위해<br>대규모 업데이트를 준비하고 있습니다.</p>
+    <p style="margin-top:20px; color:#666;">자세한 일정은 추후 공지드리겠습니다.</p>
   </div>
-
-  <script>
-    const now = new Date();
-    const last = document.getElementById('last-updated');
-    const eta = document.getElementById('eta');
-    const y = document.getElementById('year');
-
-    last.textContent = new Intl.DateTimeFormat(undefined, {
-      year: 'numeric', month: 'short', day: '2-digit',
-      hour: '2-digit', minute: '2-digit'
-    }).format(now);
-
-    const etaDate = new Date(now.getTime() + 2 * 60 * 60 * 1000);
-    eta.textContent = new Intl.DateTimeFormat(undefined, {
-      year: 'numeric', month: 'short', day: '2-digit',
-      hour: '2-digit', minute: '2-digit'
-    }).format(etaDate);
-
-    y.textContent = String(now.getFullYear());
-
-    document.getElementById('retryBtn').addEventListener('click', () => location.reload());
-  </script>
 </body>
 </html>
